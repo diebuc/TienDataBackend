@@ -40,7 +40,7 @@ class StoresController < ApplicationController
   # POST /stores
   # POST /stores.json
   def create
-    @store = Store.new(params[:store])
+    @store = Store.new(store_params)
 
     respond_to do |format|
       if @store.save
@@ -59,7 +59,7 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
 
     respond_to do |format|
-      if @store.update_attributes(params[:store])
+      if @store.update_attributes(store_params)
         format.html { redirect_to @store, notice: 'Store was successfully updated.' }
         format.json { head :no_content }
       else
@@ -67,6 +67,12 @@ class StoresController < ApplicationController
         format.json { render json: @store.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def store_params
+    params.require(:store).permit(:name, :address, :phone, :email, :URL, :hoursOfOperation)
   end
 
   # DELETE /stores/1

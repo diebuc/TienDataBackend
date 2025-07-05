@@ -1,12 +1,12 @@
 development:
   encoding: unicode
   adapter: postgresql
-  database: tiendatadb_development
+  database: tiendatabackend_development
   pool: 5
   timeout: 5000
   username: postgres
-  password: lamberto
-  host: localhost
+  password: password
+  host: db
   port: 5432 
 
 test:
