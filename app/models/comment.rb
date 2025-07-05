@@ -1,4 +1,6 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   belongs_to :store
-  attr_accessible :comment
+  
+  validates :comment, presence: true
+  validates :store, presence: true
 end

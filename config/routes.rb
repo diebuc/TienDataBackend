@@ -1,4 +1,6 @@
 TienDataBackend::Application.routes.draw do
+  get '/health', to: 'health#status'
+  
   resources :stores do
     resources :comments
   end

@@ -1,4 +1,4 @@
-class CreateStores < ActiveRecord::Migration
+class CreateStores < ActiveRecord::Migration[7.0]
   def change
     create_table :stores do |t|
       t.string :name
@@ -8,7 +8,7 @@ class CreateStores < ActiveRecord::Migration
       t.string :URL
       t.string :hoursOfOperation
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

@@ -1,25 +1,47 @@
 source 'https://rubygems.org'
+ruby '3.4.4'
 
-gem 'rails', '3.2.13'
+gem 'rails', '~> 7.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Database
+gem 'sqlite3', '~> 1.4.0'
 
-gem 'pg'
+# Assets: The original asset pipeline for Rails
+gem 'sprockets-rails', '>= 2.0.0'
+gem 'sass-rails', '~> 6.0'
+gem 'jbuilder', '~> 2.7'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem 'importmap-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem 'turbo-rails'
 
-  gem 'uglifier', '>= 1.0.3'
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem 'stimulus-rails'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.2', require: false
+
+# Ruby 3.4.4 compatibility
+gem 'mutex_m'
+gem 'bigdecimal'
+
+# Web server
+gem 'puma', '~> 5.0'
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-gem 'jquery-rails'
+group :development do
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 4.1.0'
+  gem 'listen', '~> 3.3'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
