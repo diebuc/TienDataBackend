@@ -1,32 +1,42 @@
 source 'https://rubygems.org'
 ruby '3.1.4'
 
-gem 'rails', '~> 5.2.8'
+gem 'rails', '~> 6.1.7'
 
 # Database
-gem 'sqlite3', '~> 1.3.6'
+gem 'sqlite3', '~> 1.4.0'
 
-# Assets
-gem 'sass-rails', '~> 5.1'
-gem 'coffee-rails', '~> 4.2'
-gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
+# Assets: The original asset pipeline for Rails
+gem 'sprockets-rails', '>= 2.0.0'
+gem 'sass-rails', '~> 6.0'
+gem 'jbuilder', '~> 2.7'
+
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem 'importmap-rails'
+
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem 'turbo-rails'
+
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem 'stimulus-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.4.2', require: false
 
 # Web server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 5.0'
 
 group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 4.1.0'
+  gem 'listen', '~> 3.3'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # To use ActiveModel has_secure_password
