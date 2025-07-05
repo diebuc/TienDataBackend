@@ -59,7 +59,7 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
 
     respond_to do |format|
-      if @store.update_attributes(store_params)
+      if @store.update(store_params)
         format.html { redirect_to @store, notice: 'Store was successfully updated.' }
         format.json { head :no_content }
       else

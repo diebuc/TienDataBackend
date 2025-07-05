@@ -1,24 +1,14 @@
 development:
-  encoding: unicode
-  adapter: postgresql
-  database: tiendatabackend_development
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  timeout: 5000
-  username: postgres
-  password: password
-  host: db
-  port: 5432 
+  timeout: 5000 
 
 test:
-  encoding: unicode  
-  adapter: postgresql
-  database: tiendatadb_test
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
   timeout: 5000
-  username: postgres
-  password: lamberto
-  host: localhost
-  port: 5432
 
 production:
   encoding: unicode

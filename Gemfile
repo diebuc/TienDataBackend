@@ -1,25 +1,33 @@
 source 'https://rubygems.org'
+ruby '3.1.4'
 
-gem 'rails', '4.0.13'
+gem 'rails', '~> 5.2.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Database
+gem 'sqlite3', '~> 1.3.6'
 
-gem 'pg'
+# Assets
+gem 'sass-rails', '~> 5.1'
+gem 'coffee-rails', '~> 4.2'
+gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+# Web server
+gem 'puma', '~> 3.11'
 
-  gem 'uglifier', '>= 1.0.3'
+group :development, :test do
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-gem 'jquery-rails'
+group :development do
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
