@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '3.1.4'
+ruby '3.4.4'
 
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 7.0.0'
 
 # Database
 gem 'sqlite3', '~> 1.4.0'
@@ -22,6 +22,10 @@ gem 'stimulus-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+# Ruby 3.4.4 compatibility
+gem 'mutex_m'
+gem 'bigdecimal'
 
 # Web server
 gem 'puma', '~> 5.0'
